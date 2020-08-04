@@ -60,6 +60,9 @@
   };
 
   (function(dToc) {
+
+      console.log("dToc =>", dToc);
+
     dToc($, window);
     $.widget("discourse.dToc", {
       _create: function() {
@@ -251,6 +254,9 @@
   })(() => {});
 
   api.decorateCooked($elem => {
+      console.log("decordateCooked called: ");
+      console.log("$elem: ", $elem);
+      
     run.scheduleOnce("actions", () => {
       if ($elem.hasClass("d-editor-preview")) return;
       if (!$elem.parents("article#post_1").length) return;
